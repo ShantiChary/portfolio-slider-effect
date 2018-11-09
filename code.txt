@@ -1,0 +1,279 @@
+meida query code:
+
+/* @media only screen and (max-width: 1300px) {
+  .left-h1,
+  .right-h1,
+  .heart {
+    display: none;
+  }
+
+  .left-text {
+    display: none;
+  }
+
+  .right-text {
+    top: 250px;
+    left: 15%;
+    width: 300px;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+}
+
+@media only screen and (max-width: 568px) {
+    .btn-mobile-menu {
+      display: block;
+    }
+
+    nav {
+      /* clear: both; */
+      height: 50px;
+      /* overflow: hidden; */
+      -webkit-transition: height 0.3s ease;
+      transition: height 0.3s ease;
+    }
+
+    .show-mobile-menu nav {
+      height: 260px;
+      margin-top: 2%;
+    }
+
+    nav a {
+      /* float: none; */
+      width: 100%;
+      display: block;
+      border-left: none;
+      border-bottom: 1px solid #024109;
+      background-color: #F59740;
+      line-height: 43px;
+      color: black;
+      padding-top: 1px;
+      font-weight: bold;
+    }
+
+    /* .nav-main li:first-child a {
+      padding-top: 0;
+      border-top: 1px solid #024109;
+    }
+
+    .nav-main li:last-child a {
+      border-bottom: none;
+      padding: 1px 0;
+    } */
+
+    .nav-main a:focus,
+    .nav-main a:hover,
+    .nav-main a:active {
+      background-color: #F59740;
+    }
+
+    .nav-main .nav-active {
+      color: red;
+	}
+
+} */
+
+
+
+
+
+
+
+=================================
+
+.curtain {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.curtain_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+input[type="checkbox"]:checked + div.curtain_panel_left {
+  /* slide the left panel */
+  transform: translateX(0);
+}
+
+input[type="checkbox"]:checked + div.curtain_panel_right {
+  /* slide the right panel */
+  transform: translateX(0);
+}
+
+.curtain_panel {
+  display: flex;
+  align-items: center;
+  background: orange;
+  color: #fff;
+  float: left;
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  transition: all 1s ease-out;
+  z-index: 2;
+}
+
+input[type="checkbox"]:not(:checked) + div.curtain_panel_left {
+  justify-content: flex-end;
+  transform: translateX(-100%);
+}
+
+input[type="checkbox"]:not(:checked) + div.curtain_panel_right {
+  justify-content: flex-start;
+  transform: translateX(100%);
+}
+
+.curtain_content {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.curtain_content img {
+  width: 20%;
+}
+
+=======================
+
+
+         <div class="curtain">
+            <div class="curtain_wrapper">
+              <input type="checkbox" checked>
+
+              <div class="curtain_panel curtain_panel_left">
+                <h1>HELLO</h1>
+              </div> <!--end curtain_panel_left-->
+
+              <div class="curtain_content">
+                <!-- <img src="images/my-logo.png" alt="Logo"  ;> -->
+                <h1>I AM SHANTI CHARY</h1>
+                <p>AND I AM A WEB DEVELOPER</p>
+              </div>
+
+              <div class="curtain_panel curtain_panel_right">
+                <h2>click me</h2>
+              </div>  <!--end curtain_panel_right-->
+
+            </div>  <!--end curtain_wrapper-->
+         </div>   end curtain
+
+
+=======================
+
+
+.curtain {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.curtain_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+/* When the checkbox is checked... */
+        
+/* Slide the first panel in */
+input[type=checkbox]:checked ~ .curtain_panel_left {
+  transform: translateX(-50%);
+}
+        
+/* Slide the second panel in */
+input[type=checkbox]:checked ~ .curtain_panel_right {
+  transform: translateX(50%);
+}
+
+/* input[type="checkbox"]:checked ~ #izq{
+	transform:translateX(-50%);
+}
+
+input[type="checkbox"]:checked ~ #der{
+	transform:translateX(50%);
+} */
+
+
+.curtain_panel {
+  display: flex;
+  align-items: center;
+  background: orange;
+  color: #fff;
+  float: left;
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  transition: all 1s ease-out;
+  z-index: 2;
+}
+
+input[type="checkbox"]:not(:checked) + div.curtain_panel_left {
+  justify-content: flex-end;
+  transform: translateX(-100%);
+}
+
+input[type="checkbox"]:not(:checked) + div.curtain_panel_right {
+  justify-content: flex-start;
+  transform: translateX(100%);
+}
+
+.curtain_content {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.curtain_content img {
+  width: 20%;
+}
+
+============
+
+      <div class="wrapper">
+        <header>
+          <h1><a href="index.html"><img class="sign" src= "images/signature.png" alt="logo"></a></h1>
+
+          <nav>
+            <ul>
+              <!-- <li><a href="#about">About Me</a></li> -->
+              <li><a href="#projects">PROJECTS</a></li>
+              <li><a href="#contact">ABOUT/CONTACT</a></li>
+            </ul>
+          </nav>
+        </header>
+
+
